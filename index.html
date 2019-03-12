@@ -9,8 +9,9 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css?family=Rancho|Lato:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="css/jquery.bxslider.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js">
+    </script>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Beraky</title>
 </head>
@@ -19,24 +20,24 @@
    <div class="main-wrapper">
        <header id="header">
             <div class="cabezal"></div>
-            <nav class="burger" role="navigation">
-                <div id="menuToggle">
-                <input type="checkbox" />               
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="menu">
-                  <a href="#inicio"><li>INICIO</li></a>
-                  <a href="#conoce"><li>CONOCE</li></a>
-                  <a href="#cafe"><li>CAFÉ</li></a>
-                  <a href="#locales"><li>LOCALES</li></a>
-                  <a href="#promo"><li>PROMO</li></a>
-                  <a href="#contacto"><li>CONTACTO</li></a>
-                </ul>
-              </div>
-            </nav>
-            <div class="content-wrap cabezal-cont">
-                <div class="etiqueta">
+                
+                <div class="content-wrap cabezal-cont">
+                        <nav class="burger" role="navigation">
+                                <div id="menuToggle">
+                                <input type="checkbox" />               
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <ul id="menu">
+                                <a href="#conoce"><li>CONOCE</li></a>
+                                <a href="#cafe"><li>CAFÉ</li></a>
+                                <a href="#locales"><li>LOCALES</li></a>
+                                <a href="#promo"><li>PROMO</li></a>
+                                <a href="#contacto"><li>CONTACTO</li></a>
+                                </ul>
+                            </div>
+                        </nav>
+                <a href="#inicio" class="etiqueta">
                     <div class="logo_beraky">
                         <?xml version="1.0" encoding="utf-8"?>
                         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -87,31 +88,17 @@
                             <path d="M125.978,96.466c3.355,4.832-2.255,8.946-5.756,11.122c2.334-2.027,7.166-6.372,4.123-10.195
                                 C124.085,97.067,125.755,96.144,125.978,96.466z"/>
                         </svg>
-                        <p>                                    
-                            Beraky
-                        </p>
+                        <p>Beraky</p>
                     </div> 
-                </div>  
+                </a>  
                 <nav class="nav-line">
-                    <ul class="centro-v">
-                        <li>
-                            <a href="#contacto">CONTACTO</a>
-                        </li>
-                        <li>
-                            <a href="#promo">PROMO</a>
-                        </li>
-                        <li>
-                            <a href="#locales">LOCALES</a>
-                        </li>
-                        <li>
-                            <a href="#cafe">CAFÉ</a>
-                        </li>
-                        <li>
-                            <a href="#conoce">CONOCE</a>
-                        </li>
-                        <li>
-                            <a href="#inicio">INICIO</a>
-                        </li>
+                    <ul>
+                        <li><a href="#contacto">CONTACTO</a></li>
+                        <li><a href="#promo">PROMO</a></li>
+                        <li><a href="#locales">LOCALES</a></li>
+                        <li><a href="#cafe">CAFÉ</a></li>
+                        <li><a href="#conoce">CONOCE</a></li>
+                        <li><a href="#inicio">INICIO</a></li>
                     </ul>
                 </nav>
             </div>              
@@ -122,18 +109,55 @@
             
             <section id="inicio" class="inicio">
                 <article class="content-wrap" style="padding-top: 12vh; height: 100%">
-                    <div style="height: 100%">
+                <!--<div style="height: 100%">-->
+
+                        <!--animacion  viewBox="0 0 100% 100%" al svg-->
+                        <svg class="intro titulo1" id="intro">
+                            <text text-anchor="middle" y="33%" x="50%" class="text text-stroke" clip-path="url(#text1)">
+                                CUANDO LO QUE
+                            </text>
+                            <text text-anchor="middle" y="50%" x="50%" class="text text-stroke" clip-path="url(#text2)">
+                                YA CONOCES
+                            </text>
+                            <text text-anchor="middle" y="66%" x="50%" class="text text-stroke" clip-path="url(#text3)">
+                                LOGRA SORPRENDERTE
+                            </text>
+                            <text text-anchor="middle" y="33%" x="50%" class="text text-stroke text-stroke-2" clip-path="url(#text1)">
+                                CUANDO LO QUE
+                            </text>
+                            <text text-anchor="middle" y="50%" x="50%" class="text text-stroke text-stroke-2" clip-path="url(#text2)">
+                                YA CONOCES
+                            </text>
+                            <text text-anchor="middle" y="66%" x="50%" class="text text-stroke text-stroke-2" clip-path="url(#text3)">
+                                LOGRA SORPRENDERTE
+                            </text>
+                            <defs>
+                                <clipPath id="text1">
+                                    <text text-anchor="middle" y="33%" x="50%"  class="text">
+                                        CUANDO LO QUE
+                                    </text>
+                                </clipPath>
+                                <clipPath id="text2">
+                                    <text text-anchor="middle" y="50%" x="50%"  class="text">
+                                        YA CONOCES
+                                    </text>
+                                </clipPath>
+                                <clipPath id="text3">
+                                    <text text-anchor="middle" y="66%" x="50%" class="text">
+                                        LOGRA SORPRENDERTE
+                                    </text>
+                                </clipPath>
+                            </defs>
+                        </svg>
                         <div class="centro-v" style="margin: auto">
-                            <h2 class="titulo1">CUANDO LO QUE YA CONOCÉS,<br>LOGRA SORPRENDERTE</h2>
                         </div>
-                    </div>
                     <div style="text-align: center;
                                 position: absolute;
                                 width: 100%;
                                 height: 14vh;
                                 bottom: 0">    
                         <div style="position: relative;">
-                            <a href="#conoce" class="conoce">Conocé más!</a>
+                            <a href="#conoce" class="conoce">Conoce más!</a>
                         </div>
                         <a href="#conoce" style="display: block; height: 4em; width: 3em; margin: auto; z-index: 1; position: relative;">
                             <svg class="element-animation" version ="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -156,7 +180,7 @@
                     <div class="content-wrap" style="max-width: 786px;">
                         <div class="centro-v">
                         <h3>¡BIENVENIDOS A BERAKY!</h3>
-                        <p class="hide-2 margin-bot">Nuestras bebidas son elaboradas con el objetivo de mostrar siempre el carácter intrínseco de los cafés individuales, servidos con familiaridad informal.</p>
+                        <p class="hide-m margin-bot">Nuestras bebidas son elaboradas con el objetivo de mostrar siempre el carácter intrínseco de los cafés individuales, servidos con familiaridad informal.</p>
                         <p class="margin-bot">
                             Somos proveedores apasionados de café, pero también ofrecemos una selección de tés de primera calidad,
                             pasteles finos y otras delicias para satisfacer las papilas gustativas.</p>
@@ -167,26 +191,18 @@
             </section>
 
             <section class="separador">
-                <div class="content-wrap">
-                    <div class="text-center centro-v">
-                        <h3 class="w-80">SOMOS EXPERTOS EN CAFÉ</h3>
-                    </div>
-                </div>
+                <h3>SOMOS EXPERTOS</h3><h3>EN CAFÉ</h3>
                 <div id="cafe" class="fin-seccion"></div>
             </section>
 
             <section id="cafe" class="cafe"> 
                 <div class="especiales">
-                    <div class="content-wrap">
-                        <div class="centro-v">
-                            <div class="texto-especiales">              
-                                <h3>Especiales</h3>        
-                                <p>Te presentamos nuestra nueva línea exclusivos sabores:</p> 
-                                <p class="margin-top">Affogato, Oliang y Freschetto.</p>                                
-                                <p class="hide-2 margin-top">También podes disfrutar de nuestros exclusivos capuchinos saborizados.</p>
-                                <p class="hide-2">¡Disfrutalos en nuestras sucursales!</p>
-                            </div>
-                        </div>                     
+                    <div class="texto-especiales">              
+                        <h3>Especiales</h3>        
+                        <p>Te presentamos nuestra nueva línea de exclusivos sabores:</p> 
+                        <p class="margin-top">Affogato, Oliang y Freschetto.</p>                                
+                        <p class="hide-m margin-top">También podes disfrutar de nuestros exclusivos capuchinos saborizados.</p>
+                        <p class="hide-m">¡Disfrutalos en nuestras sucursales!</p>
                     </div>
                 </div>
 
@@ -208,44 +224,40 @@
                     <div class="columna-locales" style="text-align: right; display: flex; flex-flow: column wrap;">
                         <i class="fas fa-map-marker-alt"></i>
                         <p>Montevideo</p>
-                        <p style="margin-bottom: 0.8rem;">Charrúa 1776</p>
+                        <p style="margin-bottom: 1.2rem;">Charrúa 1776</p>
                         <div style="display: inline-block;">
-                            <p style="display: inline-block;">Piriapolis,</p>
-                            <p class="off-480" style="display: inline-block; margin-left: 0.2rem;"> Canelones</p>                            
+                            <p>Piriapolis,</p>
+                            <p class="hide-m" style="margin-left: 0.2rem;"> Canelones</p>                            
                         </div>
                         <p style="margin-bottom: 0px;">Reconquista 341</p>
                     </div>
                 
                     <div class="columna-locales">
                         <i class="fas fa-clock"></i>
-                        <p style="margin-bottom: 0.8rem;">Martes a Viernes<br>7:30 - 19:00</p>
+                        <p style="margin-bottom: 1.2rem;">Martes a Viernes<br>7:30 - 19:00</p>
                         <p>Sábado a Domingo<br>9:00 - 19:00</p>
                     </div>
                 </div>
             </section>
 
             <section class="separador">
-                <div class="content-wrap">
-                    <div class="text-center centro-v">
-                        <h3 class="w-80">CADA DÍA, LE PONEMOS COLOR AL CAFÉ</h3>
-                    </div>
-                </div>
+                <h3>CADA DÍA, LE PONEMOS</h3><h3>COLOR AL CAFÉ</h3>
                 <div id="promo" class="fin-seccion"></div>
             </section>
 
             <section class="promo">
                 <div class="cups">
-                    <img class="vaso1" id="vaso1" src="Imagenes/promo.jpg">
+                    <img class="vaso1" src="Imagenes/promo.jpg">
                     <img class="vaso2" id="change_me" src="Imagenes/promo2.png">
                 </div>              
                 <div class="promo-fondo">
-                    <div class="pad-r">       
+                          
                         <div class="texto-promo">                 
                             <h3>Promo Ami-GO<br>de Café Beraky:</h3>
                             <p>50% de descuento en el<br>segundo café para llevar.</p>
                             <p style="margin-top: 1em">Hasta el 22 de diciembre 2018.</p>
                         </div>
-                    </div>
+                    
                 </div>
             </section>
 
@@ -257,30 +269,18 @@
                         <div class="mensaje text-center">
                             <div role="form" class="formulario" lang="es" dir="ltr">
                                 <form action="" method="post" novalidate="novalidate">
-                                    <span class="col-izq">
-                                        <input type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Nombre">
-                                    </span>
-                                    <span class="col-der">
-                                        <input type="email" name="your-email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Email">
-                                    </span>
-                                    <span>
-                                        <textarea name="your-message" aria-invalid="false" placeholder="Tu mensaje"></textarea>
-                                    </span>
-                                    <p style="width: 97px; margin: 1em auto 0 auto;">
-                                        <input type="submit" value="Enviar">
-                                    </p>
+                                    <span class="col-izq"><input type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Nombre"></span>
+                                    <span class="col-der"><input type="email" name="your-email" value="" size="40" aria-required="true" aria-invalid="false" placeholder="Email"></span>
+                                    <span><textarea name="your-message" aria-invalid="false" placeholder="Tu mensaje"></textarea></span>
+                                    <p style="width: 97px; margin: 1em auto 0 auto;"><input type="submit" value="Enviar"></p>
                                 </form> 
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="height:100%; filter: drop-shadow(0 0 16px rgba(0, 0, 0, 1))">
-                    <div class="curva-down" style="bottom: -3%"></div>
-                </div>
+                <div class="curva" style="bottom: -3%"></div>
             </section>
-
-            <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-           <!--<link rel="stylesheet" type="text/css" href="css/styles.css">-->
+            <script src="js/jquery.bxslider.min.js"></script>
         </main>
        
         <footer class="main-wrapper">            
@@ -306,6 +306,7 @@
             </div>
         </footer>
     </div>
+
     <script>
         $(document).scrollTop(0);
         $(document).ready(function(){
@@ -319,21 +320,22 @@
     </script>
 
     <script>
-        $(function() {
-            var alturaPrimeraSection = $('.y-cero').outerHeight();
-            var sectionPromo = $('.promo').offset().top;
-        
-            $(window).on('scroll', function(){
-                totalScroll = $(window).scrollTop();
-                if(totalScroll >= alturaPrimeraSection){
-                    $('header').addClass('onScroll');
-                }else{
-                    $('header').removeClass('onScroll');
-                }
-                if(totalScroll >= sectionPromo - 100){
-                    $('#change_me').addClass('on');
-                }
-            });
+        var div = document.getElementById("intro");
+        div.classList.add("go");
+
+        var alturaPrimeraSection = $('.y-cero').outerHeight();
+        var sectionPromo = $('.promo').offset().top;
+    
+        $(window).on('scroll', function(){
+            totalScroll = $(window).scrollTop();
+            if(totalScroll >= alturaPrimeraSection){
+                $('header').addClass('onScroll');
+            }else{
+                $('header').removeClass('onScroll');
+            }
+            if(totalScroll >= sectionPromo - 100){
+                $('#change_me').addClass('on');
+            }
         });
     </script>
 </body>
