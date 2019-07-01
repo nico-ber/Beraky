@@ -106,27 +106,27 @@
 
                         <!--animacion  viewBox="0 0 100% 100%" al svg-->
                         <svg class="intro titulo1" id="intro">
-                            <text text-anchor="middle" y="33%" x="50%" class="text text-stroke" clip-path="url(#text1)">
+                            <text text-anchor="middle" y="28%" x="50%" class="text text-stroke" clip-path="url(#text1)">
                                 CUANDO LO QUE
                             </text>
                             <text text-anchor="middle" y="50%" x="50%" class="text text-stroke" clip-path="url(#text2)">
                                 YA CONOCES
                             </text>
-                            <text text-anchor="middle" y="66%" x="50%" class="text text-stroke" clip-path="url(#text3)">
+                            <text text-anchor="middle" y="71%" x="50%" class="text text-stroke" clip-path="url(#text3)">
                                 LOGRA SORPRENDERTE
                             </text>
-                            <text text-anchor="middle" y="33%" x="50%" class="text text-stroke text-stroke-2" clip-path="url(#text1)">
+                            <text text-anchor="middle" y="28%" x="50%" class="text text-stroke text-stroke-2" clip-path="url(#text1)">
                                 CUANDO LO QUE
                             </text>
                             <text text-anchor="middle" y="50%" x="50%" class="text text-stroke text-stroke-2" clip-path="url(#text2)">
                                 YA CONOCES
                             </text>
-                            <text text-anchor="middle" y="66%" x="50%" class="text text-stroke text-stroke-2" clip-path="url(#text3)">
+                            <text text-anchor="middle" y="71%" x="50%" class="text text-stroke text-stroke-2" clip-path="url(#text3)">
                                 LOGRA SORPRENDERTE
                             </text>
                             <defs>
                                 <clipPath id="text1">
-                                    <text text-anchor="middle" y="33%" x="50%"  class="text">
+                                    <text text-anchor="middle" y="28%" x="50%"  class="text">
                                         CUANDO LO QUE
                                     </text>
                                 </clipPath>
@@ -136,7 +136,7 @@
                                     </text>
                                 </clipPath>
                                 <clipPath id="text3">
-                                    <text text-anchor="middle" y="66%" x="50%" class="text">
+                                    <text text-anchor="middle" y="71%" x="50%" class="text">
                                         LOGRA SORPRENDERTE
                                     </text>
                                 </clipPath>
@@ -300,7 +300,7 @@
         </footer>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <!--[if lt IE 9]>
          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
          <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -313,6 +313,8 @@
                 auto:false,
                 controls:true,
                 pager:false,
+                preventDefaultSwipeY:false,
+                touchEnabled:true,
             });
         });
     </script>
