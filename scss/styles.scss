@@ -1,7 +1,7 @@
 @import "normalize.scss";
 
-$tablet-width: 758px;
-$desktop-width: 1024px;
+$tablet-width: 37rem; //758px = 50rem
+$desktop-width: 68rem; //1024px
 
 @mixin mobile {
   @media (max-width: #{$tablet-width}) {
@@ -10,7 +10,7 @@ $desktop-width: 1024px;
 }
 
 @mixin tablet {
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+  @media (min-width: #{$tablet-width}) /*and (max-width: #{$desktop-width - 0.066rem})*/ {
     @content;
   }
 }
@@ -63,7 +63,7 @@ footer {
 
 .content-wrap {
   position:relative;
-  max-width:1280px;
+  max-width:90vw;
   width:88%;
   height: 100%;
   margin:0 auto;
@@ -127,7 +127,6 @@ a:hover {
   width: 100%;
   height: 100%;
   position: absolute;
-//top: -7px;
   cursor: pointer;
   opacity: 0;
   z-index: 2;
@@ -137,14 +136,14 @@ a:hover {
 #menuToggle span
 {
   display: block;
-  width: 33px;
-  height: 4px;
+  width: 2.2rem;
+  height: 0.266rem;
   margin-bottom: 5px;
   position: relative;
   background: $crema;
-  border-radius: 3px;
+  border-radius: 0.2rem;
   z-index: 1;
-  transform-origin: 4px 0px;
+  transform-origin: 0.266rem 0;
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
   opacity 0.55s ease;
 }
@@ -163,7 +162,7 @@ a:hover {
 #menuToggle input:checked ~ span
 {
   opacity: 1;
-  transform: rotate(45deg) translate(8px, 3px);
+  transform: rotate(45deg) translate(0.3rem, 0.2rem);
   background: $crema;
 }
 
@@ -181,7 +180,7 @@ a:hover {
  */
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
-  transform: rotate(-45deg) translate(-3px, 9px);
+  transform: rotate(-45deg) translate(0.0rem, 0.2rem);
 }
 
 /*
@@ -191,11 +190,11 @@ a:hover {
 #menu
 {
   position: absolute;
-  right: -27px;
-  min-width: 34vw;
+  right: -6.8rem;
+  min-width: 73vw;
   max-width: 100vw;
   margin: -100px 0 0 -50px;
-  padding: 138px 60px 30px 39px;
+  padding: 132px 60px 355px 32px;
   background:hsl(240, 17%, 22%);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -204,7 +203,7 @@ a:hover {
   transform-origin: 0% 0%;
   transform: translate(200%, 0);
   
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.8s cubic-bezier(0.53, 0.01, 0.48, 1);
 }
 
 #menu li
@@ -212,6 +211,7 @@ a:hover {
   padding: 10px 0;
   font-size: 1.5rem;
   text-align: left;
+  line-height: 145%;
 }
 
 #menuToggle input:checked ~ ul
@@ -272,7 +272,7 @@ a:hover {
 }
 
 .nav-line {
-  width: 600px;
+  width: 43rem;
   display: block;
   @include mobile{
     display: none;
@@ -284,7 +284,7 @@ a:hover {
   font-size: 1.2rem;
   line-height: 2rem;
   @include desktop{
-    font-size: 1.0rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -470,71 +470,71 @@ svg.intro {
 @keyframes animationFrames{
   0% {
     opacity:0;
-    transform:  translate(0px,-30px)  ;
+    transform:  translate(0,-2rem);
   }
   50% {
     opacity:1;
-    transform:  translate(0px,NaNpx)  ;
+    transform:  translate(0,NaNpx);
   }
   100% {
     opacity:0;
-    transform:  translate(0px,0px)  ;
+    transform:  translate(0,0);
   }}
 
 @-moz-keyframes animationFrames{
   0% {
     opacity:0;
-    -moz-transform:  translate(0px,-30px)  ;
+    -moz-transform:  translate(0,-2rem);
   }
   50% {
     opacity:1;
-    -moz-transform:  translate(0px,NaNpx)  ;
+    -moz-transform:  translate(0,NaNpx);
   }
   100% {
     opacity:0;
-    -moz-transform:  translate(0px,0px)  ;
+    -moz-transform:  translate(0,0);
   }}
 
 @-webkit-keyframes animationFrames {
   0% {
     opacity:0;
-    -webkit-transform:  translate(0px,-30px)  ;
+    -webkit-transform:  translate(0,-2rem);
   }
   50% {
     opacity:1;
-    -webkit-transform:  translate(0px,NaNpx)  ;
+    -webkit-transform:  translate(0,NaNpx);
   }
   100% {
     opacity:0;
-    -webkit-transform:  translate(0px,0px)  ;
+    -webkit-transform:  translate(0,0);
   }}
 
 @-o-keyframes animationFrames {
   0% {
     opacity:0;
-    -o-transform:  translate(0px,-30px)  ;
+    -o-transform:  translate(0,-2rem);
   }
   50% {
     opacity:1;
-    -o-transform:  translate(0px,NaNpx)  ;
+    -o-transform:  translate(0,NaNpx);
   }
   100% {
     opacity:0;
-    -o-transform:  translate(0px,0px)  ;
+    -o-transform:  translate(0,0);
   }}
 
 @-ms-keyframes animationFrames {
   0% {
     opacity:0;
-    -ms-transform:  translate(0px,-30px)  ;
+    -ms-transform:  translate(0,-2rem);
   }
   50% {
     opacity:1;
-    -ms-transform:  translate(0px,NaNpx)  ;
+    -ms-transform:  translate(0,NaNpx);
   }
   100% {
     opacity:0;
-    -ms-transform:  translate(0px,0px)  ;
+    -ms-transform:  translate(0,0);
   }}
 
 /*-------------------------------------*/
@@ -559,6 +559,12 @@ a {
   p {
     margin-bottom: 1rem;
   }
+  div {
+    max-width: 50vw;
+    @include mobile(){
+      max-width: 80vw;
+    }
+  }
 }
 
 .cafe,
@@ -573,7 +579,8 @@ a {
   flex-flow: column;
   h3 {
     @include mobile(){
-      display: none;
+     // display: none;
+     margin-bottom: 1rem;
     }
   }
 }
@@ -589,15 +596,15 @@ h2 {
 }
 
 h3 {
-  font-size: 1.8rem;
-  line-height: 2.2rem;
+  font-size: 2.2rem;
+  line-height: 3rem;
   text-transform: uppercase;
   font-weight: 400;
-  margin-bottom: 1.3rem;
+  margin-bottom: 3.3rem;
   @include desktop{
-    margin-bottom: 2rem;
-    font-size: 2.4rem;
-    line-height: 2.9rem;
+    margin-bottom: 2.7rem;
+    font-size: 2.5rem;
+    line-height: 3.2rem;
   }
 }
 
@@ -609,12 +616,12 @@ h4 {
 
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 152%;
   margin-bottom: 0rem;
   @include desktop{
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -631,27 +638,27 @@ p.margin-top {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  @include desktop{
+  @include tablet{
     height: 100%;
     width: 50%;
     padding: 0 5%;
+    text-align: left;
+    font-size: 4rem;
+   /* .texto-especiales {
+        text-align: left;
+    }*/
   }
-  .texto-especiales {
-    @include desktop{
-      text-align: left;
-  }
- }
 }
 
 .elslider {
   clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 7%);
   position: absolute;
-  bottom: -1px;
+  bottom: -0.066rem;
   padding-top: 0;
   top: initial;
   width: 100%;
   height: 72%;
-  @include desktop{
+  @include tablet{
     clip-path: polygon(10% 100%, 100% 100%, 100% 0%, 0% 0%);
     position: absolute;
     height: 100%;
@@ -702,8 +709,8 @@ p.margin-top {
 
 .bx-wrapper .bx-controls-direction a {
   top: 85%;
-  width: 30px;
-  height: 45px;
+  width: 2rem;
+  height: 3rem;
 }
 
 .bx-wrapper .bx-next:hover, .bx-wrapper .bx-next:focus {
@@ -772,7 +779,6 @@ p.margin-top {
   height: 100%;
   background-color: #f3e1be;
   position: absolute;
-  z-index: -2;
   width: 100%;
   top: 0;
   h3{
@@ -786,7 +792,7 @@ p.margin-top {
   width: 100%;
   height: 1.4%;
   position: absolute;
-  box-shadow: 0 0 36px 21px rgba(0, 0, 0, 0.33);
+  box-shadow: 0 0 2.4rem 1.4rem rgba(0, 0, 0, 0.33);
   border-radius: 50% / 50%;
 }
 
@@ -881,15 +887,15 @@ footer {
 .cups {
   position: absolute;
   height: 100%;
-  @include tablet{
+  /*@include tablet{
     height: 77%;
     left: 0;
-    bottom: -30px;
-  }
+    bottom: -2rem;
+  }*/
   @include mobile{
     height: 62%;
-    bottom: -2px;
-    left: -10px;
+    bottom: -0.13rem;
+    left: -0.66rem;
   }
 }
 
@@ -930,10 +936,7 @@ footer {
     }
   }
   @include tablet{
-    height: 36vh;
-  }
-  @include desktop{
-    clip-path: polygon(100% 100%, 54% 100%, 44% 0%, 100% 0%);
+    @include prefix(clip-path, polygon(100% 100%, 66% 100%, 57% 0%, 100% 0%),  webkit ms moz);
     position: absolute;
     right: 0;
     top: 0;
@@ -942,6 +945,9 @@ footer {
     text-align: right;
     align-items: flex-end;
   }
+  @include desktop{
+    @include prefix(clip-path, polygon(100% 100%, 49% 100%, 42% 0%, 100% 0%),  webkit ms moz);
+  }
 }
 
 .texto-promo {
@@ -949,9 +955,25 @@ footer {
   z-index: 2;
   margin-top: -2rem;
   font-size: 2rem;
-  @include desktop{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  h3,p{
+    width: 20rem;
+  }
+  @include tablet{
+    align-items: flex-end;
     padding-right: 5vw;
     text-align: right;
+    h3{
+      text-align: right;
+    }
+  }
+  @include desktop(){
+    h3,p{
+      width: auto;
+    }
   }
 }
 
@@ -977,8 +999,8 @@ textarea:-ms-input-placeholder,
   width: 50%;
   position: relative;
   float: left;
-  padding-right: 10px;
-  @include desktop(){
+  padding-right: 0.66rem;
+  @include mobile(){
     width: 100%;
     padding: 0;
   }
@@ -988,14 +1010,14 @@ textarea:-ms-input-placeholder,
 input,
 textarea,
 .uneditable-input {
-  font-size: 1.11rem;
-  line-height:1.3rem;
+  font-size: 1.5rem;
+  line-height:1.5rem;
   width: 100%;
   max-width: 100%;
   min-width: 100%;
   min-height: 2rem;
-  max-height: 190px;
-  height: 40px;
+  max-height: 12.66rem;
+  height: 2.66rem;
   background: none;
   font-family: 'Lato', Arial, Helvetica, serif;
 }
@@ -1008,11 +1030,11 @@ textarea,
   }
 
 div.formulario textarea {
-  height: 110px;
+  height: 10rem;
 }
 
 .mensaje {
-  width: 500px;
+  width: 65rem;
   max-width: 90%;
   position: relative;
   margin: auto;
@@ -1045,7 +1067,10 @@ textarea {
 }
 
 div.formulario input[type="submit"] {
-    margin-bottom: 0;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  height: 3rem;
+  margin-bottom: 0;
 }
 
 .btn, .btn-submit, input[type='submit'] {
@@ -1124,7 +1149,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .fas{
-  line-height: 1.6rem;
+  line-height: 2.5rem;
   font-size: 1.3rem;
 }
 
@@ -1152,9 +1177,12 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 
 .social {
   list-style: none;
-  width: 13rem;
+  width: 19rem;
   display: flex;
   flex-flow: row-reverse wrap;
+  @include mobile(){
+    width: 13rem;
+  }
   li {
     margin: 4px;
     position: relative;
@@ -1163,25 +1191,25 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   }
   a {
     display: block;
-    height: 39px;
-    width: 39px;
+    height: 3.6rem;
+    width: 3.6rem;
     text-align: center;
     color: #fff;
     background-color: #000;
     border-radius: 100%;
     @include mobile(){
-      height: 35px;
-      width: 35px;  
+      height: 3.3rem;
+      width: 3.3rem;  
     }
   }
 }
 
 .fab{
-  line-height: 39px;
-  font-size: 1.3rem;
+  line-height: 3.6rem;
+  font-size: 1.8rem;
   @include mobile(){
-    font-size: 1rem;
-    line-height: 35px;
+    font-size: 1.5rem;
+    line-height: 3.4rem;
   }
 }
 
@@ -1194,7 +1222,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   }
   a.instagram {
     background-color: #e9654b;
-    @include mobile(){
+    @include mobile{
       margin-right: 25px;
     }
   }
