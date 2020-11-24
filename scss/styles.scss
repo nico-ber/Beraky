@@ -372,6 +372,11 @@ svg.intro {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 20rem;
+  .text { 
+    font-size: 8rem;    
+    margin: 20rem;
+    opacity: 0;
+  }
   &.go {
     @include tablet {
       height: 50em;
@@ -381,10 +386,6 @@ svg.intro {
     }
   }
     
-  .text { 
-    font-size: 8rem;    
-    margin: 20rem;
-  }
   &.go {
     .text {
       font-size: 1.7rem;    
@@ -435,6 +436,10 @@ svg.intro {
       }
     }
   }
+}
+
+svg.intro.go .text-stroke{
+
 }
   
   @keyframes dash {

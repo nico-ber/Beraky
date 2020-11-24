@@ -378,6 +378,12 @@ svg.intro {
   height: 20rem;
 }
 
+svg.intro .text {
+  font-size: 8rem;
+  margin: 20rem;
+  opacity: 0;
+}
+
 @media (min-width: 37rem) {
   svg.intro.go {
     height: 50em;
@@ -388,11 +394,6 @@ svg.intro {
   svg.intro.go {
     height: 30rem;
   }
-}
-
-svg.intro .text {
-  font-size: 8rem;
-  margin: 20rem;
 }
 
 svg.intro.go .text {
