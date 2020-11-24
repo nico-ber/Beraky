@@ -1,7 +1,5 @@
-@import "normalize.scss";
-
-$tablet-width: 37rem; //758px = 50rem
-$desktop-width: 68rem; //1024px
+$tablet-width: 37rem;
+$desktop-width: 68rem;
 
 @mixin mobile {
   @media (max-width: #{$tablet-width}) {
@@ -10,7 +8,7 @@ $desktop-width: 68rem; //1024px
 }
 
 @mixin tablet {
-  @media (min-width: #{$tablet-width}) /*and (max-width: #{$desktop-width - 0.066rem})*/ {
+  @media (min-width: #{$tablet-width})/* and (max-width: #{$desktop-width - 0.066rem})*/ {
     @content;
   }
 }
@@ -108,10 +106,6 @@ a:hover {
   color: hsl(39, 81%, 66%);
 }
 
-.nav-line 
-  a:hover {
-  color: hsl(39, 81%, 66%);
-  }
 
 #menuToggle
 {
@@ -136,9 +130,9 @@ a:hover {
 #menuToggle span
 {
   display: block;
-  width: 2.2rem;
-  height: 0.266rem;
-  margin-bottom: 5px;
+  width: 1.7rem;
+  height: 0.2rem;
+  margin-bottom: 0.37rem;
   position: relative;
   background: $crema;
   border-radius: 0.2rem;
@@ -187,14 +181,31 @@ a:hover {
  * Make this absolute positioned
  * at the top left of the screen
  */
+#menu-fondo{
+  position: absolute;
+  height: 102vh;
+  width: 104vw;
+  right: -2rem;
+  top: -2rem;
+  background:#00000082;
+  opacity: 0;
+  -webkit-transition: opacity .8s ease-in-out;
+  -moz-transition: opacity .8s ease-in-out;
+  -ms-transition: opacity .8s ease-in-out;
+  -o-transition: opacity .8s ease-in-out;
+  transition: opacity .8s ease-in-out;
+  cursor: default;
+  pointer-events: none;  
+}
+
 #menu
 {
   position: absolute;
   right: -6.8rem;
-  min-width: 73vw;
+  min-width: 83vw;
   max-width: 100vw;
   margin: -100px 0 0 -50px;
-  padding: 132px 60px 355px 32px;
+  padding: 132px 60px 100vh 9vw;
   background:hsl(240, 17%, 22%);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -203,15 +214,18 @@ a:hover {
   transform-origin: 0% 0%;
   transform: translate(200%, 0);
   
-  transition: transform 0.8s cubic-bezier(0.53, 0.01, 0.48, 1);
+  transition: transform 0.5s cubic-bezier(0.53, 0.01, 0.48, 1);
+  li {
+    padding: 10px 0;
+    text-align: left;
+    line-height: 145%;
+  }
 }
 
-#menu li
+#menuToggle input:checked ~ a
 {
-  padding: 10px 0;
-  font-size: 1.5rem;
-  text-align: left;
-  line-height: 145%;
+  pointer-events: auto; 
+  opacity: 1;
 }
 
 #menuToggle input:checked ~ ul
@@ -219,20 +233,11 @@ a:hover {
   transform: none;
 }
 /*------------------------------------*/
-
-.conoce {
-  font-size: 2rem;
-  @include mobile(){
-    font-size: 1.6rem;
-  }
-}
-
 .centro-v {
   position: relative;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+  transform: translateY(-50%);
+  max-height: 100%;
 }
 
 .navigation {
@@ -254,7 +259,7 @@ a:hover {
     font-family: 'Rancho', cursive;
     line-height:100%;
     font-size: 3.3vh;
-    //padding-top: 0.2rem;
+    margin-top: -0.2rem;
     text-align: center;
     position: relative;
     width: 100%;
@@ -272,26 +277,25 @@ a:hover {
 }
 
 .nav-line {
-  width: 43rem;
+  width: 40rem;
   display: block;
   @include mobile{
     display: none;
   }
-}
-
-.nav-line a {
-  color: $crema;
-  font-size: 1.2rem;
-  line-height: 2rem;
-  @include desktop{
-    font-size: 1.3rem;
+  a:hover {
+    color: hsl(39, 81%, 66%);
   }
-}
-
-.nav-line ul {
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row-reverse;
+  a {
+    color: $crema;
+    line-height: 2rem;
+    cursor: pointer;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+    list-style: none;
+  }
 }
 
 .titulo1 {
@@ -354,37 +358,36 @@ $azul:hsl(240,10%,1%);
   height: 100vh;
   background: url(../Imagenes/Inicio2.jpg) center center no-repeat;
   background-size: cover;
+
+  a{
+      width: 3rem;
+  }
 }
 
 /*--------intro animada----------*/
-
 svg.intro {
-//background: linear-gradient(135deg, #aa3bb1, #582a7e);
   max-width: 88vw;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 20rem;
-  //animation: dash 10s ease-in-out forwards;
   &.go {
     @include tablet {
       height: 50em;
     }
     @include desktop {
-      height: 50rem;
+      height: 30rem;
     }
   }
     
   .text { 
-    //display: none;
     font-size: 8rem;    
-    //animation: dash 10s ease-in-out forwards;
     margin: 20rem;
   }
   &.go {
     .text {
-      font-size: 1.9rem;    
+      font-size: 1.7rem;    
       line-height: 5rem; 
       text-align: center;
       display: block;
@@ -396,8 +399,8 @@ svg.intro {
         font-size: 3.3rem;
       }
       @include desktop {
-        height: 30rem;
-        font-size: 5rem;
+        height: 10rem;
+        font-size: 3rem;
         text-anchor: 50%;
       }
     }
@@ -410,7 +413,7 @@ svg.intro {
       stroke-dasharray: 900;
       stroke-linecap: round;
       stroke-linejoin: butt;
-      animation: dash 2.5s ease-in-out forwards;
+      animation: dash 2.0s ease-in-out forwards;
       animation-delay: 0.0s;      
       &:nth-child(2) {
         animation-delay: 0.45s;
@@ -565,6 +568,13 @@ a {
       max-width: 80vw;
     }
   }
+  h3{
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    @include mobile(){
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 .cafe,
@@ -575,11 +585,10 @@ a {
 }
 
 .cafe{
-  display: flex;
-  flex-flow: column;
+  box-shadow: 0 0 2rem .1rem #00000054;
+  z-index: 1;
   h3 {
     @include mobile(){
-     // display: none;
      margin-bottom: 1rem;
     }
   }
@@ -596,7 +605,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: 1.7rem;
   line-height: 3rem;
   text-transform: uppercase;
   font-weight: 400;
@@ -606,22 +615,25 @@ h3 {
     font-size: 2.5rem;
     line-height: 3.2rem;
   }
+  @include mobile(){
+    //font-size: 1.5rem;  
+  }
 }
 
 h4 {
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
+  margin: 0rem;
 }
 
 
 p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 152%;
   margin-bottom: 0rem;
   @include desktop{
-    font-size: 1.7rem;
   }
 }
 
@@ -631,12 +643,11 @@ p.margin-top {
 
 .especiales {
   padding: 0 10%;
-  height: 30%;
-  text-align: center;
+  height: 42%;
   color: $crema;
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   @include tablet{
     height: 100%;
@@ -644,20 +655,31 @@ p.margin-top {
     padding: 0 5%;
     text-align: left;
     font-size: 4rem;
-   /* .texto-especiales {
-        text-align: left;
-    }*/
+    .texto-especiales {
+      
+      text-align: left;
+      height: 55%;
+    }
+  }
+  @include mobile(){
+    .texto-especiales{
+      padding-top: 1rem;
+      h4{
+        margin: 0 0 1rem;
+        font-size: 1.5rem;
+      }
+    }
   }
 }
 
 .elslider {
-  clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 7%);
+  clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 9%);
   position: absolute;
   bottom: -0.066rem;
   padding-top: 0;
   top: initial;
   width: 100%;
-  height: 72%;
+  height: 58%;
   @include tablet{
     clip-path: polygon(10% 100%, 100% 100%, 100% 0%, 0% 0%);
     position: absolute;
@@ -697,10 +719,13 @@ p.margin-top {
 }
 
 .bx-wrapper .bx-next {
-  right: 13%;
-  background: none;
-  background-image: url(../Imagenes/angle-right-solid2.svg);
-  background-size: cover;
+  right: 0;
+  background-image: url(../Imagenes/siguiente.png);
+  background-size: 3.5rem;
+  background-position: right;
+  @include mobile(){
+    background-size: 3rem;
+  }
 }
 
 .bx-next img{
@@ -708,13 +733,17 @@ p.margin-top {
 }
 
 .bx-wrapper .bx-controls-direction a {
-  top: 85%;
-  width: 2rem;
-  height: 3rem;
+  top: 83%;
+  width: 3.5rem;
+  height: 4rem;
 }
 
 .bx-wrapper .bx-next:hover, .bx-wrapper .bx-next:focus {
-  background-position: 0;
+  background-position: right;
+}
+
+.bx-wrapper .bx-next:hover {
+  background-size: 4rem;
 }
 
 .bx-clone {
@@ -753,7 +782,6 @@ p.margin-top {
     position: relative;
     color: #f6e7cb;
     line-height: 155%;
-    font-size: 1.7rem;
     width: auto;
     text-align: center;
     @include desktop{
@@ -781,7 +809,7 @@ p.margin-top {
   position: absolute;
   width: 100%;
   top: 0;
-  h3{
+  h4{
     text-align: center;
     color: #303a45;
   }
@@ -849,6 +877,7 @@ p.margin-top {
 }
 
 footer {
+  overflow: hidden;
   height: 17vh;
   position: relative;
   color: #f6e7cb;
@@ -882,16 +911,14 @@ footer {
             lighten( $azul, 23%) 94%, 
             lighten( $azul, 22%) 97%, 
             lighten( $azul, 21%) 100%);
-            }
+  p{
+    margin: initial;
+  }  
+}
 
 .cups {
   position: absolute;
   height: 100%;
-  /*@include tablet{
-    height: 77%;
-    left: 0;
-    bottom: -2rem;
-  }*/
   @include mobile{
     height: 62%;
     bottom: -0.13rem;
@@ -910,8 +937,8 @@ footer {
   width: 100%;
  -webkit-transform:translateY(0);
   transform:translateY(0);
-  -webkit-transition:0.8s ease-in-out;
-  @include prefix(transition, 0.8s ease-in-out,  webkit ms moz);
+  -webkit-transition:0.5s ease-in-out;
+  @include prefix(transition, 0.5s ease-in-out,  webkit ms moz);
 }
 
 .vaso2.on {
@@ -924,12 +951,8 @@ footer {
 .promo-fondo {
   background-color: hsla(39, 81%, 66%, 1);
   color: #384451;
-  @include prefix(clip-path, polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%),  webkit ms moz);
+  @include prefix(clip-path, polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%),  webkit ms moz);
   height: 40vh;
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
   @include mobile{
     .content-wrap {
       height: 42%;
@@ -946,34 +969,17 @@ footer {
     align-items: flex-end;
   }
   @include desktop{
-    @include prefix(clip-path, polygon(100% 100%, 49% 100%, 42% 0%, 100% 0%),  webkit ms moz);
+    @include prefix(clip-path, polygon(100% 100%, 59% 100%, 52% 0%, 100% 0%),  webkit ms moz);
   }
 }
 
 .texto-promo {
-  text-align: center;
-  z-index: 2;
-  margin-top: -2rem;
   font-size: 2rem;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  width: 100%;
-  h3,p{
-    width: 20rem;
-  }
+  width: 85%;
+  display: inline-block;
+  padding: 0 0 1rem 2rem;
   @include tablet{
-    align-items: flex-end;
-    padding-right: 5vw;
-    text-align: right;
-    h3{
-      text-align: right;
-    }
-  }
-  @include desktop(){
-    h3,p{
-      width: auto;
-    }
+    padding:0 5vw 5rem 0;
   }
 }
 
@@ -1010,7 +1016,6 @@ textarea:-ms-input-placeholder,
 input,
 textarea,
 .uneditable-input {
-  font-size: 1.5rem;
   line-height:1.5rem;
   width: 100%;
   max-width: 100%;
@@ -1034,11 +1039,14 @@ div.formulario textarea {
 }
 
 .mensaje {
-  width: 65rem;
+  width: 45rem;
   max-width: 90%;
   position: relative;
-  margin: auto;
+  margin: 3rem auto;
   z-index: 8;
+  @include mobile(){
+    margin-top: 1rem;
+  }
 }
 
 input:focus,
@@ -1066,10 +1074,14 @@ textarea {
   width: 100%;
 }
 
+.formulario form p {
+  width: 6.4rem;
+  margin: 2em auto 0 auto;
+}
+
 div.formulario input[type="submit"] {
-  font-size: 1.5rem;
   line-height: 1.5rem;
-  height: 3rem;
+  height: 2.5rem;
   margin-bottom: 0;
 }
 
@@ -1118,11 +1130,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   p,
   h4 {
     display: inline-block; 
-    font-size: 1.4rem;
-    line-height: 2.5rem;
     @include mobile(){
-      font-size: 1.2rem;
+      font-size: 1rem;
       line-height: 2rem;
+      margin-top: 1.2rem;
     }
   }
   p.hide-m{
@@ -1134,8 +1145,6 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     height: 100%;
   }
   i {
-    margin-bottom: 0.8rem;
-    font-size: 2rem;
     @include mobile(){
       font-size: 1.7rem;
     }
@@ -1149,7 +1158,6 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .fas{
-  line-height: 2.5rem;
   font-size: 1.3rem;
 }
 
@@ -1165,7 +1173,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   display: flex;
   flex-flow: column wrap;
   @include mobile(){
-    width: 44%;
+    width: 42%;
   }
 }
 
@@ -1191,25 +1199,15 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   }
   a {
     display: block;
-    height: 3.6rem;
-    width: 3.6rem;
+    height: 2.3rem;
+    width: 2.3rem;
     text-align: center;
     color: #fff;
     background-color: #000;
     border-radius: 100%;
-    @include mobile(){
-      height: 3.3rem;
-      width: 3.3rem;  
+    i{
+      line-height: 2.3rem;
     }
-  }
-}
-
-.fab{
-  line-height: 3.6rem;
-  font-size: 1.8rem;
-  @include mobile(){
-    font-size: 1.5rem;
-    line-height: 3.4rem;
   }
 }
 
@@ -1230,3 +1228,24 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: #0077b5;
   }
 }
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.texto-especiales, .texto-promo {
+  @include desktop(){
+    p,h3{
+      font-size: 1.23rem;
+    }
+    h3{
+      margin: 0;
+    }
+  } 
+} 

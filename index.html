@@ -7,27 +7,28 @@
     <meta name="description" content="" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css?family=Rancho|Lato:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.bxslider.min.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="scss/styles.css">
     <title>Beraky</title>
 </head>
 
-<body>
+<body class="noselect">
    <div class="main-wrapper">
        <header id="header">
             <div class="cabezal"></div>                
                 <div class="content-wrap cabezal-cont">
                         <nav class="burger" role="navigation">
-                                <div id="menuToggle">
-                                <input type="checkbox" />               
+                            <div id="menuToggle">
+                                <input type="checkbox" id="check"/>  
+                                <a href="#" id="menu-fondo"></a>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                                 <ul id="menu">
-                                <a href="#conoce"><li>CONOCE</li></a>
-                                <a href="#cafe"><li>CAFÉ</li></a>
-                                <a href="#locales"><li>LOCALES</li></a>
-                                <a href="#promo"><li>PROMO</li></a>
-                                <a href="#contacto"><li>CONTACTO</li></a>
+                                    <a class="nav-conoce2"><li>CONOCE</li></a>
+                                    <a class="nav-cafe2"><li>CAFÉ</li></a>
+                                    <a class="nav-locales2"><li>LOCALES</li></a>
+                                    <a class="nav-promo2"><li>PROMO</li></a>
+                                    <a class="nav-contacto2"><li>CONTACTO</li></a>
                                 </ul>
                             </div>
                         </nav>
@@ -87,11 +88,11 @@
                 </a>  
                 <nav class="nav-line">
                     <ul>
-                        <li><a href="#contacto">CONTACTO</a></li>
-                        <li><a href="#promo">PROMO</a></li>
-                        <li><a href="#locales">LOCALES</a></li>
-                        <li><a href="#cafe">CAFÉ</a></li>
-                        <li><a href="#conoce">CONOCE</a></li>
+                        <li><a class="nav-contacto">CONTACTO</a></li>
+                        <li><a class="nav-promo">PROMO</a></li>
+                        <li><a class="nav-locales">LOCALES</a></li>
+                        <li><a class="nav-cafe">CAFÉ</a></li>
+                        <li><a class="nav-conoce">CONOCE</a></li>
                     </ul>
                 </nav>
             </div>              
@@ -142,8 +143,6 @@
                                 </clipPath>
                             </defs>
                         </svg>
-                        <div class="centro-v" style="margin: auto">
-                        </div>
                     <div style="text-align: center;
                                 position: absolute;
                                 width: 100%;
@@ -152,9 +151,9 @@
                         <div style="position: relative;">
                             <a href="#conoce" class="conoce">Conoce más!</a>
                         </div>
-                        <a href="#conoce" style="display: block; height: 4em; width: 3em; margin: auto; z-index: 1; position: relative;">
+                        <a href="#conoce" style="display: block; margin: auto; z-index: 1; position: relative;">
                             <svg class="element-animation" version ="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
-                            width="2rem" height="2rem" viewBox="111 57 30 30" enable-background="new 111 57 30 30" xml:space="preserve" style="margin-top: 2em">
+                            height="1.5rem" viewBox="111 57 30 30" enable-background="new 111 57 30 30" xml:space="preserve" style="margin-top: 2em">
                                 <path fill="rgba(239, 189, 98, 0.66)" d="M124.684,71.063l-10.086-10.086c-0.697-0.697-0.697-1.825,0-2.515l-0.323,0.324
                                     c0.697-0.697,1.824-0.697,2.514,0l9.156,9.156l9.148-9.148c0.698-0.697,1.825-0.697,2.515,0l-0.315-0.338
                                     c0.696,0.697,0.696,1.824,0,2.514l-10.086,10.086C126.509,71.76,125.381,71.76,124.684,71.063z M127.206,85.303l10.086-10.088
@@ -191,10 +190,10 @@
             <section id="cafe" class="cafe"> 
                 <div class="especiales">
                     <div class="texto-especiales">              
-                        <h3>Especiales</h3>        
+                        <h4>Especiales</h4>        
                         <p>Te presentamos nuestra nueva línea de exclusivos sabores:</p> 
                         <p class="margin-top">Affogato, Oliang y Freschetto.</p>                                
-                        <p class="hide-m margin-top">También podes disfrutar de nuestros exclusivos capuchinos saborizados.</p>
+                        <p class="margin-top">También podes disfrutar de nuestros exclusivos capuchinos saborizados.</p>
                         <p class="hide-m">¡Disfrutalos en nuestras sucursales!</p>
                     </div>
                 </div>
@@ -216,18 +215,13 @@
                 <div class="centro-v" style="display: flex; justify-content: space-between;">
                     <div class="columna-locales" style="text-align: right; display: flex; flex-flow: column wrap;">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Montevideo</p>
-                        <p style="margin-bottom: 1.2rem;">Charrúa 1776</p>
-                        <div style="display: inline-block;">
-                            <p>Piriapolis,</p>
-                            <p class="hide-m" style="margin-left: 0.2rem;"> Canelones</p>                            
-                        </div>
-                        <p style="margin-bottom:0;">Reconquista 341</p>
+                        <p>Montevideo<br>Charrúa 1776</p>
+                        <p>Piriápolis<br>Reconquista 341</p>
                     </div>
                 
                     <div class="columna-locales">
                         <i class="fas fa-clock"></i>
-                        <p style="margin-bottom: 1.2rem;">Martes a Viernes<br>7:30 - 19:00</p>
+                        <p>Martes a Viernes<br>7:30 - 19:00</p>
                         <p>Sábado a Domingo<br>9:00 - 19:00</p>
                     </div>
                 </div>
@@ -244,13 +238,11 @@
                     <img class="vaso2" id="change_me" src="Imagenes/promo2.png">
                 </div>              
                 <div class="promo-fondo">
-                          
-                        <div class="texto-promo">                 
-                            <h3>Promo Ami-GO de Café Beraky:</h3>
-                            <p>50% de descuento en el segundo café para llevar.</p>
-                            <p style="margin-top: 1em">Hasta el 22 de diciembre 2018.</p>
-                        </div>
-                    
+                    <div class="texto-promo centro-v">                 
+                        <h4>Promo Ami-GO de<br>Café Beraky:</h4>
+                        <p>50% de descuento en ele<br>segundo café para llevar.</p>
+                        <p style="margin-top: 1em">Hasta el 22 de diciembre 2018.</p>
+                    </div>
                 </div>
             </section>
 
@@ -259,7 +251,7 @@
                         <div class="curva" style="top: -3%;"></div>
 
                     <div class="centro-v">
-                        <h3>Hablemos!</h3> 
+                        <h4>Hablemos!</h4> 
                         <div class="mensaje text-center">
                             <div role="form" class="formulario" lang="es" dir="ltr">
                                 <form action="" method="post" novalidate="novalidate">
@@ -305,6 +297,60 @@
          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
          <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
+
+    <script>
+        //Cerrar menu hamburguesa
+        $("#menu-fondo").click(function(e) {
+            if((e.target).tagName == 'INPUT') return true; 
+            e.preventDefault();
+            $("#check").prop("checked", !$("#check").prop("checked"));
+        });
+
+        let nav_conoce = document.querySelector('.nav-conoce, .nav-conoce2');
+        let conoce = document.querySelector('#conoce');
+        let nav_cafe = document.querySelector('.nav-cafe, .nav-cafe2');
+        let cafe = document.querySelector('#cafe');
+        let nav_locales = document.querySelector('.nav-locales, .nav-locales2');
+        let locales = document.querySelector('#locales');
+        let nav_promo = document.querySelector('.nav-promo, .nav-promo2');
+        let promo = document.querySelector('#promo');
+        let nav_contacto = document.querySelector('.nav-contacto, .nav-contacto2');
+        let contacto = document.querySelector('#contacto');
+
+        nav_conoce.addEventListener('click', function (f) {
+            conoce.scrollIntoView({behavior: 'smooth'});
+            if((f.target).tagName == 'INPUT') return true; 
+            f.preventDefault();
+            $("#check").prop("checked", !$("#check").prop("checked"));
+        });
+
+        nav_cafe.addEventListener('click', function (f) {
+            cafe.scrollIntoView({behavior: 'smooth'});
+            if((f.target).tagName == 'INPUT') return true; 
+            f.preventDefault();
+            $("#check").prop("checked", !$("#check").prop("checked"));
+        });
+        nav_locales.addEventListener('click', function (f) {
+            locales.scrollIntoView({behavior: 'smooth'});
+            if((f.target).tagName == 'INPUT') return true; 
+            f.preventDefault();
+            $("#check").prop("checked", !$("#check").prop("checked"));
+        });
+        nav_promo.addEventListener('click', function (f) {
+            promo.scrollIntoView({behavior: 'smooth'});
+            if((f.target).tagName == 'INPUT') return true; 
+            f.preventDefault();
+            $("#check").prop("checked", !$("#check").prop("checked"));
+        });
+        nav_contacto.addEventListener('click', function (f) {
+            contacto.scrollIntoView({behavior: 'smooth'});
+            if((f.target).tagName == 'INPUT') return true; 
+            f.preventDefault();
+            $("#check").prop("checked", !$("#check").prop("checked"));
+        });
+
+        
+    </script>
     <script>
         $(document).scrollTop(0);
         $(document).ready(function(){
