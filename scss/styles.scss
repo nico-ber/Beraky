@@ -601,7 +601,7 @@ a {
 #texto-intro{
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   height: 80%;
   h2:nth-of-type(1){
     @include desktop(){
