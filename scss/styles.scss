@@ -325,6 +325,7 @@ a:hover {
 .onScroll
   .cabezal {
     opacity: 1;
+    box-shadow: 0 0 0.7rem 0.1rem #00000083;
 }
 
 .onScroll
@@ -355,9 +356,9 @@ a:hover {
   height: 100vh;
   background: url(../Imagenes/Inicio2.jpg) center center no-repeat;
   background-size: cover;
-
   a{
       width: 3rem;
+      font-weight: 100;
   }
 }
 
@@ -580,14 +581,10 @@ a {
   }
 }
 
-.promo
- {
-  height: 95vh;
-  overflow: hidden;
-}
+
 
 .cafe{
-  height: 90vh;
+  height: 98vh;
   background: darken( $turquesa, 15%);
   box-shadow: 0 0 2rem .1rem #00000054;
   z-index: 1;
@@ -602,7 +599,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 80%;
+  height: 77%;
   h2:nth-of-type(1){
     @include desktop(){
       margin-top: 17rem;
@@ -620,7 +617,7 @@ h2 {
 
   @include mobile(){
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -636,7 +633,7 @@ h3 {
     line-height: 3.2rem;
   }
   @include mobile(){
-    font-size: 1.5rem;  
+    font-size: 1.2rem;  
   }
 }
 
@@ -665,7 +662,7 @@ p.margin-top {
   bottom: 0;
   position: absolute;
   padding: 0 13%;
-  height: 57%;
+  height: 61%;
   color: $crema;
   /*
   display: flex;
@@ -673,7 +670,7 @@ p.margin-top {
   align-items: flex-start;
   justify-content: center;*/
   clip-path: polygon(0% 91%, 100% 100%, 100% 9%, 0% 0%);
-  bottom: -2rem;
+  bottom: -3.5rem;
   z-index: 1;
   @include mobile(){
     background: darken( $turquesa, 15%);
@@ -692,7 +689,7 @@ p.margin-top {
   @include mobile(){
     .texto-especiales{
       h4{
-        margin: 0 0 1rem;
+        margin: 0 0 0.2rem;
         font-size: 1.5rem;
       }
     }
@@ -706,7 +703,7 @@ p.margin-top {
   top: 0;
   position: absolute;
   width: 100%;
-  height: 54%;
+  height: 56%;
   @include tablet{
     clip-path: polygon(10% 100%, 100% 100%, 100% 0%, 0% 0%);
     position: absolute;
@@ -780,7 +777,7 @@ p.margin-top {
     width: 100vh;
   }
 }
-
+/*
 .separador {
   @include prefix(background, linear-gradient(180deg, 
   darken( $turquesa, 12%) 0%,  
@@ -821,11 +818,13 @@ p.margin-top {
       font-size: 2.5rem;
     }
   }
-}
+}*/
 
 .promo {
   width: 100%;
   color: darken( $turquesa, 20%);
+  height: 100vh;
+  overflow: hidden;
   @include mobile(){
     margin-top: -2rem;
   }
@@ -978,7 +977,7 @@ footer {
   background-color: hsla(39, 81%, 66%, 1);
   color: darken($turquesa, 20%);
   @include prefix(clip-path, polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%),  webkit ms moz);
-  height: 46vh;
+  height: 53vh;
   @include mobile{
     .content-wrap {
       height: 45%;
@@ -1062,6 +1061,9 @@ textarea,
 
 div.formulario textarea {
   height: 8rem;
+  @include mobile(){
+    height: 6rem;
+  }
 }
 
 .mensaje {
@@ -1119,7 +1121,7 @@ input[type="submit"] {
 }
 .btn, .btn-submit, input[type="submit"] {
     color: hsla(40, 69%, 94%, 1);
-    background: #10a2a2;
+    background: hsl(180, 52%, 35%);
     margin-bottom: 10px;
     margin-right: 4px;
     font-weight: 600;
@@ -1144,7 +1146,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .locales {
-  height: 60vh;
+  height: 90vh;
   background-image: url(../Imagenes/Sirviendo.jpg);
   background-position: center center;
   background-size: cover;
@@ -1173,6 +1175,21 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   i {
     @include mobile(){
       font-size: 1.7rem;
+    }
+  }
+  .columna-locales{
+    @include mobile(){
+      width: 47%;
+    }
+  }
+  .columna-locales:nth-of-type(1){
+    @include mobile(){
+      text-align: left !important;
+    }
+  }
+  .columna-locales:nth-of-type(2){
+    @include mobile(){
+      text-align: right;
     }
   }
 }
@@ -1207,9 +1224,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   width: 19rem;
   display: flex;
   flex-flow: row-reverse wrap;
-  @include mobile(){
-    width: 13rem;
-  }
+  
   li {
     margin: 4px;
     position: relative;
@@ -1226,6 +1241,17 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     border-radius: 100%;
     i{
       line-height: 2.3rem;
+    }
+  }
+  @include mobile(){
+    width: 13rem;
+    padding: 0;
+    a {
+      height: 2.0rem;
+      width: 2.0rem;
+      i{
+        line-height: 2.0rem;
+      }
     }
   }
 }

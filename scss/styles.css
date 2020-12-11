@@ -323,6 +323,8 @@ a:hover {
 .onScroll
 .cabezal {
   opacity: 1;
+  -webkit-box-shadow: 0 0 0.7rem 0.1rem #00000083;
+          box-shadow: 0 0 0.7rem 0.1rem #00000083;
 }
 
 .onScroll
@@ -356,6 +358,7 @@ p {
 
 .inicio a {
   width: 3rem;
+  font-weight: 100;
 }
 
 /*--------intro animada----------*/
@@ -576,13 +579,8 @@ a {
   }
 }
 
-.promo {
-  height: 95vh;
-  overflow: hidden;
-}
-
 .cafe {
-  height: 90vh;
+  height: 98vh;
   background: #223a3a;
   -webkit-box-shadow: 0 0 2rem .1rem #00000054;
           box-shadow: 0 0 2rem .1rem #00000054;
@@ -606,7 +604,7 @@ a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  height: 80%;
+  height: 77%;
 }
 
 @media (min-width: 68rem) {
@@ -627,7 +625,7 @@ h2 {
 @media (max-width: 37rem) {
   h2 {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -649,7 +647,7 @@ h3 {
 
 @media (max-width: 37rem) {
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -675,7 +673,7 @@ p.margin-top {
   bottom: 0;
   position: absolute;
   padding: 0 13%;
-  height: 57%;
+  height: 61%;
   color: #eee1d4;
   /*
   display: flex;
@@ -684,7 +682,7 @@ p.margin-top {
   justify-content: center;*/
   -webkit-clip-path: polygon(0% 91%, 100% 100%, 100% 9%, 0% 0%);
           clip-path: polygon(0% 91%, 100% 100%, 100% 9%, 0% 0%);
-  bottom: -2rem;
+  bottom: -3.5rem;
   z-index: 1;
 }
 
@@ -710,7 +708,7 @@ p.margin-top {
 
 @media (max-width: 37rem) {
   .especiales .texto-especiales h4 {
-    margin: 0 0 1rem;
+    margin: 0 0 0.2rem;
     font-size: 1.5rem;
   }
 }
@@ -722,7 +720,7 @@ p.margin-top {
   top: 0;
   position: absolute;
   width: 100%;
-  height: 54%;
+  height: 56%;
 }
 
 @media (min-width: 37rem) {
@@ -811,69 +809,53 @@ p.margin-top {
   }
 }
 
+/*
 .separador {
-  -webkit-background: -webkit-gradient(linear, left top, left bottom, from(#274444), color-stop(3%, #2d4e4e), color-stop(6%, #2d4e4e), color-stop(9%, #345b5b), color-stop(91%, #2d4e4e), color-stop(94%, #345b5b), color-stop(97%, #345b5b), to(#3a6464));
-  -webkit-background: linear-gradient(180deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
-  -ms-background: linear-gradient(180deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
-  -moz-background: linear-gradient(180deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
-  background: -webkit-gradient(linear, left top, left bottom, from(#274444), color-stop(3%, #2d4e4e), color-stop(6%, #2d4e4e), color-stop(9%, #345b5b), color-stop(91%, #2d4e4e), color-stop(94%, #345b5b), color-stop(97%, #345b5b), to(#3a6464));
-  background: linear-gradient(180deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
+  @include prefix(background, linear-gradient(180deg, 
+  darken( $turquesa, 12%) 0%,  
+  darken( $turquesa, 9%) 3%,        
+  darken( $turquesa, 9%) 6%,      
+  darken( $turquesa, 5%) 9%,  
+
+  darken( $turquesa, 9%) 91%,        
+  darken( $turquesa, 5%) 94%,        
+  darken( $turquesa, 5%) 97%,
+  darken( $turquesa, 2%) 100%),
+  webkit ms moz);
   z-index: 2;
   padding: 20px 0;
   height: 16vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.separador :first-of-type {
-  margin-right: .4rem;
-}
-
-@media (max-width: 37rem) {
-  .separador {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    margin-right: 0;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  :first-of-type{
+    margin-right: .4rem;
   }
-}
-
-.separador h3 {
-  margin: 0;
-  position: relative;
-  color: #f6e7cb;
-  line-height: 155%;
-  width: auto;
-  text-align: center;
-}
-
-@media (min-width: 68rem) {
-  .separador h3 {
-    font-size: 3rem;
+    @include mobile{
+      flex-flow: column;
+      margin-right: 0;
+    }
+  h3 {
+    margin: 0;
+    position: relative;
+    color: #f6e7cb;
+    line-height: 155%;
+    width: auto;
+    text-align: center;
+    @include desktop{
+      font-size: 3rem;
+    }
+    @include tablet{
+      font-size: 2.5rem;
+    }
   }
-}
-
-@media (min-width: 37rem) {
-  .separador h3 {
-    font-size: 2.5rem;
-  }
-}
-
+}*/
 .promo {
   width: 100%;
   color: #182a2a;
+  height: 100vh;
+  overflow: hidden;
 }
 
 @media (max-width: 37rem) {
@@ -1006,7 +988,7 @@ footer p {
   -ms-clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
   -moz-clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
   clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
-  height: 46vh;
+  height: 53vh;
 }
 
 @media (max-width: 37rem) {
@@ -1123,6 +1105,12 @@ div.formulario textarea {
   height: 8rem;
 }
 
+@media (max-width: 37rem) {
+  div.formulario textarea {
+    height: 6rem;
+  }
+}
+
 .mensaje {
   width: 45rem;
   max-width: 90%;
@@ -1187,7 +1175,7 @@ input[type="submit"] {
 
 .btn, .btn-submit, input[type="submit"] {
   color: #faf3e5;
-  background: #10a2a2;
+  background: #2b8888;
   margin-bottom: 10px;
   margin-right: 4px;
   font-weight: 600;
@@ -1210,7 +1198,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .locales {
-  height: 60vh;
+  height: 90vh;
   background-image: url(../Imagenes/Sirviendo.jpg);
   background-position: center center;
   background-size: cover;
@@ -1248,6 +1236,24 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 @media (max-width: 37rem) {
   .locales i {
     font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 37rem) {
+  .locales .columna-locales {
+    width: 47%;
+  }
+}
+
+@media (max-width: 37rem) {
+  .locales .columna-locales:nth-of-type(1) {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 37rem) {
+  .locales .columna-locales:nth-of-type(2) {
+    text-align: right;
   }
 }
 
@@ -1296,12 +1302,6 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
           flex-flow: row-reverse wrap;
 }
 
-@media (max-width: 37rem) {
-  .social {
-    width: 13rem;
-  }
-}
-
 .social li {
   margin: 4px;
   position: relative;
@@ -1321,6 +1321,20 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 
 .social a i {
   line-height: 2.3rem;
+}
+
+@media (max-width: 37rem) {
+  .social {
+    width: 13rem;
+    padding: 0;
+  }
+  .social a {
+    height: 2.0rem;
+    width: 2.0rem;
+  }
+  .social a i {
+    line-height: 2.0rem;
+  }
 }
 
 .social a.facebook {
