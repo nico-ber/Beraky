@@ -83,9 +83,10 @@ header {
 }
 
 $crema:#eee1d4;
+$turquesa:hsl(180, 27%, 33%);
+
 
 /*-----------burger--------------*/
-
 .burger {
   position: absolute;
   display: none;
@@ -118,9 +119,10 @@ a:hover {
 
 #menuToggle input {
   display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  top: -1rem;
+  left: -0.9rem;  position: absolute;
   cursor: pointer;
   opacity: 0;
   z-index: 2;
@@ -160,27 +162,22 @@ a:hover {
   background: $crema;
 }
 
-/*
- * But let's hide the middle one.
- */
+
+//Ocultar la linea del medio
+
 #menuToggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
+//Cambio dirección de la última
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0.0rem, 0.2rem);
 }
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
+ //Posicionamiento absoluto en la esquina
 #menu-fondo{
   position: absolute;
   height: 102vh;
@@ -206,10 +203,10 @@ a:hover {
   max-width: 100vw;
   margin: -100px 0 0 -50px;
   padding: 132px 60px 100vh 9vw;
-  background:hsl(240, 17%, 22%);
+  background: darken( $turquesa, 12%);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
+  //Evitar flickering de texto en safari
   
   transform-origin: 0% 0%;
   transform: translate(200%, 0);
@@ -232,7 +229,7 @@ a:hover {
 {
   transform: none;
 }
-/*------------------------------------*/
+
 .centro-v {
   position: relative;
   top: 50%;
@@ -303,22 +300,21 @@ a:hover {
     width: 100%;
 }
 
-$azul:hsl(240,10%,1%);
-
 .cabezal {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
   @include prefix(background, linear-gradient(180deg, 
-  lighten( $azul, 19%) 0%,        
-  lighten( $azul, 24%) 6%,        
-  lighten( $azul, 25%) 12%,      
-  lighten( $azul, 19%) 18%,        
-  lighten( $azul, 30%) 82%,        
-  lighten( $azul, 25%) 88%,        
-  lighten( $azul, 24%) 94%,
-  lighten( $azul, 19%) 100%), 
+  darken( $turquesa, 12%) 0%,  
+  darken( $turquesa, 9%) 3%,        
+  darken( $turquesa, 9%) 6%,      
+  darken( $turquesa, 5%) 9%,  
+
+  darken( $turquesa, 9%) 91%,        
+  darken( $turquesa, 5%) 94%,        
+  darken( $turquesa, 5%) 97%,
+  darken( $turquesa, 2%) 100%),
   webkit ms moz);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#42292d', endColorstr='#24323f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
@@ -452,12 +448,8 @@ svg.intro.go .text-stroke{
   color:$crema;
 }
 
-/*------------flecha animada-----------*/
+//------------flecha animada-----------//
 .element-animation{
-  animation: animationFrames linear .9s;
-  animation-iteration-count: infinite;
-  transform-origin: 50% 50%;
-  animation-fill-mode:forwards; /*when the spec is finished*/
   -webkit-animation: animationFrames linear .9s;
   -webkit-animation-iteration-count: infinite;
   -webkit-transform-origin: 50% 50%;
@@ -473,7 +465,12 @@ svg.intro.go .text-stroke{
   -ms-animation: animationFrames linear .9s;
   -ms-animation-iteration-count: infinite;
   -ms-transform-origin: 50% 50%;
-  -ms-animation-fill-mode:forwards; /*IE 10+*/}
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
+  animation: animationFrames linear .9s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+}
 
 @keyframes animationFrames{
   0% {
@@ -561,9 +558,9 @@ a {
 
 .sobre {
   background-color: #f0c575;
-  color: #384451;
+  color: darken($turquesa, 20%);
   text-align: center;
-  height: 74.1vh;
+  height: 90.1vh;
   p {
     margin-bottom: 1rem;
   }
@@ -582,14 +579,15 @@ a {
   }
 }
 
-.cafe,
-.promo {
-  background: #5d2c34;
-  height: 90vh;
+.promo
+ {
+  height: 95vh;
   overflow: hidden;
 }
 
 .cafe{
+  height: 90vh;
+  background: darken( $turquesa, 15%);
   box-shadow: 0 0 2rem .1rem #00000054;
   z-index: 1;
   h3 {
@@ -599,15 +597,45 @@ a {
   }
 }
 
-h2 {
-  font-size: 4rem;
-  font-weight: 400;
-  color:$crema;
-  line-height: 6rem;
-  @include mobile(){
-    font-size: 3rem;
+#texto-intro{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  h2:nth-of-type(1){
+    //flex-basis: ;
   }
 }
+
+h2 {
+  //display: inline-block;
+  font-size: 2.6rem;
+  font-weight: 100;
+  color:$crema;
+  line-height: 150%;
+  clear: right;
+  text-align: center;
+
+  @include mobile(){
+    display: block;
+    font-size: 1.6rem;
+  }
+}
+
+#inicio div h2:nth-of-type(1){
+  @include desktop(){
+    margin-top: 7rem;
+  }
+  @include mobile(){
+    margin-top: 7rem;
+  }
+}
+
+#inicio article h2:nth-of-type(3){
+  @include desktop(){
+    display: block !important;
+  }
+}
+
 
 h3 {
   font-size: 1.7rem;
@@ -621,7 +649,7 @@ h3 {
     line-height: 3.2rem;
   }
   @include mobile(){
-    //font-size: 1.5rem;  
+    font-size: 1.5rem;  
   }
 }
 
@@ -647,13 +675,21 @@ p.margin-top {
   }
 
 .especiales {
-  padding: 0 10%;
-  height: 42%;
+  bottom: 0;
+  position: absolute;
+  padding: 0 13%;
+  height: 57%;
   color: $crema;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: center;
+  clip-path: polygon(0% 91%, 100% 100%, 100% 9%, 0% 0%);
+  bottom: -2rem;
+  z-index: 1;
+  @include mobile(){
+    background: darken( $turquesa, 15%);
+  }
   @include tablet{
     height: 100%;
     width: 50%;
@@ -661,14 +697,12 @@ p.margin-top {
     text-align: left;
     font-size: 4rem;
     .texto-especiales {
-      
       text-align: left;
       height: 55%;
     }
   }
   @include mobile(){
     .texto-especiales{
-      padding-top: 1rem;
       h4{
         margin: 0 0 1rem;
         font-size: 1.5rem;
@@ -678,13 +712,13 @@ p.margin-top {
 }
 
 .elslider {
-  clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 9%);
   position: absolute;
   bottom: -0.066rem;
   padding-top: 0;
-  top: initial;
+  top: 0;
+  position: absolute;
   width: 100%;
-  height: 58%;
+  height: 54%;
   @include tablet{
     clip-path: polygon(10% 100%, 100% 100%, 100% 0%, 0% 0%);
     position: absolute;
@@ -738,7 +772,7 @@ p.margin-top {
 }
 
 .bx-wrapper .bx-controls-direction a {
-  top: 83%;
+  top: 80%;
   width: 3.5rem;
   height: 4rem;
 }
@@ -748,7 +782,9 @@ p.margin-top {
 }
 
 .bx-wrapper .bx-next:hover {
-  background-size: 4rem;
+  @include desktop(){
+    background-size: 4rem;
+  }
 }
 
 .bx-clone {
@@ -759,14 +795,15 @@ p.margin-top {
 
 .separador {
   @include prefix(background, linear-gradient(180deg, 
-  lighten( $azul, 19%) 0%,        
-  lighten( $azul, 24%) 3%,        
-  lighten( $azul, 25%) 6%,        
-  lighten( $azul, 19%) 9%,        
-  lighten( $azul, 30%) 91%,        
-  lighten( $azul, 25%) 94%,        
-  lighten( $azul, 24%) 97%,
-  lighten( $azul, 19%) 100%), 
+  darken( $turquesa, 12%) 0%,  
+  darken( $turquesa, 9%) 3%,        
+  darken( $turquesa, 9%) 6%,      
+  darken( $turquesa, 5%) 9%,  
+
+  darken( $turquesa, 9%) 91%,        
+  darken( $turquesa, 5%) 94%,        
+  darken( $turquesa, 5%) 97%,
+  darken( $turquesa, 2%) 100%),
   webkit ms moz);
   z-index: 2;
   padding: 20px 0;
@@ -800,7 +837,10 @@ p.margin-top {
 
 .promo {
   width: 100%;
-  color: #303a45;
+  color: darken( $turquesa, 20%);
+  @include mobile(){
+    margin-top: -2rem;
+  }
 }
 
 #contacto {
@@ -816,7 +856,7 @@ p.margin-top {
   top: 0;
   h4{
     text-align: center;
-    color: #303a45;
+    color: darken( $turquesa, 20%);
   }
 }
 
@@ -825,7 +865,7 @@ p.margin-top {
   width: 100%;
   height: 1.4%;
   position: absolute;
-  box-shadow: 0 0 2.4rem 1.4rem rgba(0, 0, 0, 0.33);
+  box-shadow: 0 0 2rem 1.0rem rgba(0, 0, 0, 0.33);
   border-radius: 50% / 50%;
 }
 
@@ -889,33 +929,17 @@ footer {
   font-size: 1rem;
   font-weight: 400;
   line-height: 180%;
-  background: -moz-linear-gradient(180deg,
-            lighten( $azul, 21%) 0%, 
-            lighten( $azul, 22%) 3%, 
-            lighten( $azul, 23%) 6%, 
-            lighten( $azul, 18%) 9%, 
-            lighten( $azul, 28%) 91%, 
-            lighten( $azul, 23%) 94%, 
-            lighten( $azul, 22%) 97%, 
-            lighten( $azul, 21%) 100%);
-          background: -webkit-linear-gradient(180deg,
-            lighten( $azul, 21%) 0%, 
-            lighten( $azul, 22%) 3%, 
-            lighten( $azul, 23%) 6%, 
-            lighten( $azul, 18%) 9%, 
-            lighten( $azul, 28%) 91%, 
-            lighten( $azul, 23%) 94%, 
-            lighten( $azul, 22%) 97%, 
-            lighten( $azul, 21%) 100%);
-          background: linear-gradient(180deg, 
-            lighten( $azul, 21%) 0%, 
-            lighten( $azul, 22%) 3%, 
-            lighten( $azul, 23%) 6%, 
-            lighten( $azul, 18%) 9%, 
-            lighten( $azul, 28%) 91%, 
-            lighten( $azul, 23%) 94%, 
-            lighten( $azul, 22%) 97%, 
-            lighten( $azul, 21%) 100%);
+  @include prefix(background, linear-gradient(180deg, 
+    darken( $turquesa, 12%) 0%,  
+    darken( $turquesa, 9%) 3%,        
+    darken( $turquesa, 9%) 6%,      
+    darken( $turquesa, 5%) 9%,  
+
+    darken( $turquesa, 9%) 91%,        
+    darken( $turquesa, 5%) 94%,        
+    darken( $turquesa, 5%) 97%,
+    darken( $turquesa, 2%) 100%),
+    webkit ms moz);
   p{
     margin: initial;
   }  
@@ -925,7 +949,7 @@ footer {
   position: absolute;
   height: 100%;
   @include mobile{
-    height: 62%;
+    height: 58%;
     bottom: -0.13rem;
     left: -0.66rem;
   }
@@ -955,12 +979,12 @@ footer {
 
 .promo-fondo {
   background-color: hsla(39, 81%, 66%, 1);
-  color: #384451;
-  @include prefix(clip-path, polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%),  webkit ms moz);
-  height: 40vh;
+  color: darken($turquesa, 20%);
+  @include prefix(clip-path, polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%),  webkit ms moz);
+  height: 46vh;
   @include mobile{
     .content-wrap {
-      height: 42%;
+      height: 45%;
     }
   }
   @include tablet{
@@ -974,7 +998,7 @@ footer {
     align-items: flex-end;
   }
   @include desktop{
-    @include prefix(clip-path, polygon(100% 100%, 59% 100%, 52% 0%, 100% 0%),  webkit ms moz);
+    @include prefix(clip-path, polygon(100% 100%, 57% 100%, 50% 0%, 100% 0%),  webkit ms moz);
   }
 }
 
@@ -982,7 +1006,7 @@ footer {
   font-size: 2rem;
   width: 85%;
   display: inline-block;
-  padding: 0 0 1rem 2rem;
+  padding-left: 13%;
   @include tablet{
     padding:0 5vw 5rem 0;
   }
@@ -1040,7 +1064,7 @@ textarea,
   }
 
 div.formulario textarea {
-  height: 10rem;
+  height: 8rem;
 }
 
 .mensaje {
@@ -1123,7 +1147,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .locales {
-  height: 74.1vh;
+  height: 60vh;
   background-image: url(../Imagenes/Sirviendo.jpg);
   background-position: center center;
   background-size: cover;
@@ -1170,7 +1194,13 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   position: absolute;
   width: 100%;
   height: 100%;
-  @include prefix(background, linear-gradient(135deg, rgba(66,41,45,1) 0%,rgba(0, 0, 0, 0.2) 51%,rgba(0, 0, 0, 0.2) 53%,rgba(35, 35, 61, 1)), webkit ms moz);
+  @include prefix(background, 
+  linear-gradient(135deg,
+    darken($crema, 60%) /*hsl(350, 23%, 21%)*/ 0%,
+    rgba(0, 0, 0, 0.2) 51%,
+    rgba(0, 0, 0, 0.2) 53%,
+    darken( $turquesa, 18%) /*hsl(240, 27%, 19%)*/
+   ), webkit ms moz);
 }
 
 .columna-locales {
@@ -1245,12 +1275,20 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .texto-especiales, .texto-promo {
+  h4{
+    margin-bottom: 1rem;
+    line-height: 160%;
+  }
+  p{
+    font-weight: 100;
+    margin: 0;
+    line-height: 200%;
+  }
   @include desktop(){
-    p,h3{
+    
+    p,h4{
       font-size: 1.23rem;
     }
-    h3{
-      margin: 0;
-    }
+    
   } 
 } 
