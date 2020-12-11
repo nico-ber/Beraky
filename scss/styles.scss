@@ -600,18 +600,20 @@ a {
 #texto-intro{
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  justify-content: end;
+  height: 80%;
   h2:nth-of-type(1){
-    //flex-basis: ;
+    @include desktop(){
+      margin-top: 17rem;
+    }
   }
 }
 
 h2 {
-  //display: inline-block;
   font-size: 2.6rem;
   font-weight: 100;
   color:$crema;
-  line-height: 150%;
+  line-height: 72%;
   clear: right;
   text-align: center;
 
@@ -620,22 +622,6 @@ h2 {
     font-size: 1.6rem;
   }
 }
-
-#inicio div h2:nth-of-type(1){
-  @include desktop(){
-    margin-top: 7rem;
-  }
-  @include mobile(){
-    margin-top: 7rem;
-  }
-}
-
-#inicio article h2:nth-of-type(3){
-  @include desktop(){
-    display: block !important;
-  }
-}
-
 
 h3 {
   font-size: 1.7rem;
