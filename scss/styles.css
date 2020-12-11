@@ -686,19 +686,11 @@ p.margin-top {
   padding: 0 13%;
   height: 57%;
   color: #eee1d4;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  /*
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;*/
   -webkit-clip-path: polygon(0% 91%, 100% 100%, 100% 9%, 0% 0%);
           clip-path: polygon(0% 91%, 100% 100%, 100% 9%, 0% 0%);
   bottom: -2rem;
@@ -972,19 +964,30 @@ footer p {
 
 .cups {
   position: absolute;
-  height: 100%;
+  min-height: 100%;
+  width: 69%;
 }
 
 @media (max-width: 37rem) {
   .cups {
-    height: 58%;
-    bottom: -0.13rem;
-    left: -0.66rem;
+    bottom: 0;
+    width: 100%;
+    min-height: 56%;
   }
 }
 
 .vaso1 {
   height: 100%;
+  position: absolute;
+}
+
+@media (max-width: 37rem) {
+  .vaso1 {
+    width: 122%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+  }
 }
 
 .vaso2 {
@@ -995,15 +998,14 @@ footer p {
   -webkit-transform: translateY(0);
   transform: translateY(0);
   -webkit-transition: 0.5s ease-in-out;
-  -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 
 .vaso2.on {
-  -webkit-transform: translate(0, -94%);
-  transform: translate(0, -94%);
-  width: 100%;
-  height: auto;
+  -webkit-transform: translate(0, -95%);
+  transform: translate(0, -95%);
+  width: auto;
+  height: 100%;
 }
 
 .promo-fondo {
@@ -1194,7 +1196,7 @@ input[type="submit"] {
 
 .btn, .btn-submit, input[type="submit"] {
   color: #faf3e5;
-  background: #527ead;
+  background: #10a2a2;
   margin-bottom: 10px;
   margin-right: 4px;
   font-weight: 600;
@@ -1266,16 +1268,6 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 
 .fas {
   font-size: 1.3rem;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-background: linear-gradient(135deg, #674829 0%, rgba(0, 0, 0, 0.2) 51%, rgba(0, 0, 0, 0.2) 53%, #1c3131);
-  -ms-background: linear-gradient(135deg, #674829 0%, rgba(0, 0, 0, 0.2) 51%, rgba(0, 0, 0, 0.2) 53%, #1c3131);
-  -moz-background: linear-gradient(135deg, #674829 0%, rgba(0, 0, 0, 0.2) 51%, rgba(0, 0, 0, 0.2) 53%, #1c3131);
-  background: linear-gradient(135deg, #674829 0%, rgba(0, 0, 0, 0.2) 51%, rgba(0, 0, 0, 0.2) 53%, #1c3131);
 }
 
 .columna-locales {
