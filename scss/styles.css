@@ -604,7 +604,7 @@ a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  height: 77%;
+  height: 66%;
 }
 
 @media (min-width: 68rem) {
@@ -1198,7 +1198,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .locales {
-  height: 90vh;
+  height: 84vh;
   background-image: url(../Imagenes/Sirviendo.jpg);
   background-position: center center;
   background-size: cover;

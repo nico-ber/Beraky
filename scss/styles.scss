@@ -599,7 +599,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 77%;
+  height: 66%;
   h2:nth-of-type(1){
     @include desktop(){
       margin-top: 17rem;
@@ -1146,7 +1146,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 .locales {
-  height: 90vh;
+  height: 84vh;
   background-image: url(../Imagenes/Sirviendo.jpg);
   background-position: center center;
   background-size: cover;
