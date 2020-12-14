@@ -860,7 +860,7 @@ p.margin-top {
 
 @media (max-width: 37rem) {
   .promo {
-    margin-top: -2rem;
+    margin-top: -3rem;
   }
 }
 
@@ -923,12 +923,12 @@ footer {
   font-size: 1rem;
   font-weight: 400;
   line-height: 180%;
-  -webkit-background: -webkit-gradient(linear, left top, left bottom, from(#274444), color-stop(3%, #2d4e4e), color-stop(6%, #2d4e4e), color-stop(9%, #345b5b), color-stop(91%, #2d4e4e), color-stop(94%, #345b5b), color-stop(97%, #345b5b), to(#3a6464));
-  -webkit-background: linear-gradient(180deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
-  -ms-background: linear-gradient(180deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
-  -moz-background: linear-gradient(180deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
-  background: -webkit-gradient(linear, left top, left bottom, from(#274444), color-stop(3%, #2d4e4e), color-stop(6%, #2d4e4e), color-stop(9%, #345b5b), color-stop(91%, #2d4e4e), color-stop(94%, #345b5b), color-stop(97%, #345b5b), to(#3a6464));
-  background: linear-gradient(180deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
+  -webkit-background: -webkit-gradient(linear, left bottom, left top, from(#274444), color-stop(3%, #2d4e4e), color-stop(6%, #2d4e4e), color-stop(9%, #345b5b), color-stop(91%, #2d4e4e), color-stop(94%, #345b5b), color-stop(97%, #345b5b), to(#3a6464));
+  -webkit-background: linear-gradient(0deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
+  -ms-background: linear-gradient(0deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
+  -moz-background: linear-gradient(0deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#274444), color-stop(3%, #2d4e4e), color-stop(6%, #2d4e4e), color-stop(9%, #345b5b), color-stop(91%, #2d4e4e), color-stop(94%, #345b5b), color-stop(97%, #345b5b), to(#3a6464));
+  background: linear-gradient(0deg, #274444 0%, #2d4e4e 3%, #2d4e4e 6%, #345b5b 9%, #2d4e4e 91%, #345b5b 94%, #345b5b 97%, #3a6464 100%);
 }
 
 footer p {
@@ -949,36 +949,44 @@ footer p {
   }
 }
 
-.vaso1 {
+.vaso1, .vaso2 {
   height: 100%;
   position: absolute;
 }
 
 @media (max-width: 37rem) {
-  .vaso1 {
+  .vaso1, .vaso2 {
     width: 122%;
     height: auto;
-    position: absolute;
     bottom: 0;
   }
 }
 
+/*
+.vaso1 {
+  height: 100%;
+  position: absolute;
+  @include mobile(){
+    width: 122%;
+    height: auto;
+    bottom: 0;
+  }
+ }*/
 .vaso2 {
   position: absolute;
   left: 0;
-  bottom: -96%;
-  width: 100%;
+  bottom: 0;
   -webkit-transform: translateY(0);
   transform: translateY(0);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
 }
 
 .vaso2.on {
-  -webkit-transform: translate(0, -99%);
-  transform: translate(0, -99%);
-  width: 122%;
-  height: auto;
+  -webkit-transform: translate(0, 0%);
+  transform: translate(0, 0%);
 }
 
 .promo-fondo {
@@ -988,7 +996,7 @@ footer p {
   -ms-clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
   -moz-clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
   clip-path: polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%);
-  height: 53vh;
+  height: 51vh;
 }
 
 @media (max-width: 37rem) {

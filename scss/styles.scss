@@ -826,7 +826,7 @@ p.margin-top {
   height: 100vh;
   overflow: hidden;
   @include mobile(){
-    margin-top: -2rem;
+    margin-top: -3rem;
   }
 }
 
@@ -916,7 +916,7 @@ footer {
   font-size: 1rem;
   font-weight: 400;
   line-height: 180%;
-  @include prefix(background, linear-gradient(180deg, 
+  @include prefix(background, linear-gradient(0deg, 
     darken( $turquesa, 12%) 0%,  
     darken( $turquesa, 9%) 3%,        
     darken( $turquesa, 9%) 6%,      
@@ -943,41 +943,48 @@ footer {
   }
 }
 
+.vaso1, .vaso2 {
+  height: 100%;
+  position: absolute;
+  @include mobile(){
+    width: 122%;
+    height: auto;
+    bottom: 0;
+  }
+ }
+/*
 .vaso1 {
   height: 100%;
   position: absolute;
   @include mobile(){
     width: 122%;
     height: auto;
-    position: absolute;
     bottom: 0;
   }
- }
+ }*/
 
 .vaso2 {
   position: absolute;
   left: 0;
-  bottom: -96%;
-  width: 100%;
+  bottom: 0;
  //-webkit-transform:translateY(0);
   //transform:translateY(0);
  // -webkit-transition:0.5s ease-in-out;
   @include prefix(transform, translateY(0),  webkit ms moz);
   @include prefix(transition, 0.5s ease-in-out,  webkit ms moz);
+  transform: translate(0, 100%);
 }
 
 .vaso2.on {
-  -webkit-transform: translate(0, -99%);
-  transform: translate(0, -99%);
-  width: 122%;
-  height: auto;
+  -webkit-transform: translate(0, 0%);
+  transform: translate(0, 0%);
 }
 
 .promo-fondo {
   background-color: hsla(39, 81%, 66%, 1);
   color: darken($turquesa, 20%);
   @include prefix(clip-path, polygon(0% 0%, 100% 9%, 100% 100%, 0% 91%),  webkit ms moz);
-  height: 53vh;
+  height: 51vh;
   @include mobile{
     .content-wrap {
       height: 45%;
