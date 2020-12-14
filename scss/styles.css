@@ -1222,6 +1222,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 49% 0;
+  z-index: -1;
 }
 
 .locales p,
