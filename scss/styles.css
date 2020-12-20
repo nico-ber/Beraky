@@ -177,10 +177,10 @@ a:hover {
 #menu {
   position: absolute;
   right: -6.8rem;
-  min-width: 83vw;
+  min-width: 95vw;
   max-width: 100vw;
   margin: -100px 0 0 -50px;
-  padding: 132px 60px 100vh 9vw;
+  padding: 132px 60px 100vh 13vw;
   background: #274444;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
@@ -197,7 +197,8 @@ a:hover {
 #menu li {
   padding: 10px 0;
   text-align: left;
-  line-height: 145%;
+  line-height: 200%;
+  font-size: 1.2rem;
 }
 
 #menuToggle input:checked ~ a {
@@ -705,6 +706,9 @@ p.margin-top {
 }
 
 @media (max-width: 37rem) {
+  .especiales .texto-especiales {
+    top: 47%;
+  }
   .especiales .texto-especiales h4 {
     margin: 0 0 0.2rem;
     font-size: 1.5rem;
@@ -718,7 +722,7 @@ p.margin-top {
   top: 0;
   position: absolute;
   width: 100%;
-  height: 62%;
+  height: 59%;
 }
 
 @media (min-width: 37rem) {
@@ -1415,12 +1419,6 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 @media (min-width: 68rem) {
   .texto-especiales p, .texto-especiales h4, .texto-promo p, .texto-promo h4 {
     font-size: 1.23rem;
-  }
-}
-
-@media (max-width: 37rem) {
-  .texto-especiales, .texto-promo {
-    top: 47%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
