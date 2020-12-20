@@ -230,6 +230,7 @@ a:hover {
 {
   transform: none;
 }
+//--------------------------------//
 
 .centro-v {
   position: relative;
@@ -1150,18 +1151,12 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 
 .locales {
   height: 84vh;
-  //background-image: url(../Imagenes/Sirviendo.jpg);
-  //background-position: center center;
-  //background-size: cover;
-  //background-attachment: fixed;
-  //background-repeat: no-repeat;
-  //background-position: 49% 0;
   color: #fff3e7;
   overflow: hidden;
   &::after {
     content: "";
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -1172,6 +1167,14 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background-repeat: no-repeat;
     background-position: 49% 0;
     z-index: -1;
+  }
+
+  .velo{
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    opacity: .4;
+    height: 100%;
   }
 
   p,

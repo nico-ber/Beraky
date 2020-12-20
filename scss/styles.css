@@ -1212,7 +1212,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 .locales::after {
   content: "";
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1223,6 +1223,14 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   background-repeat: no-repeat;
   background-position: 49% 0;
   z-index: -1;
+}
+
+.locales .velo {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  opacity: .4;
+  height: 100%;
 }
 
 .locales p,
