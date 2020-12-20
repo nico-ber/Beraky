@@ -578,7 +578,7 @@ a {
 }
 
 .cafe {
-  height: 98vh;
+  height: 86vh;
   background: #223a3a;
   -webkit-box-shadow: 0 0 2rem .1rem #00000054;
           box-shadow: 0 0 2rem .1rem #00000054;
@@ -671,7 +671,7 @@ p.margin-top {
   bottom: 0;
   position: absolute;
   padding: 0 13%;
-  height: 61%;
+  height: 57%;
   color: #eee1d4;
   /*
   display: flex;
@@ -718,7 +718,7 @@ p.margin-top {
   top: 0;
   position: absolute;
   width: 100%;
-  height: 56%;
+  height: 62%;
 }
 
 @media (min-width: 37rem) {
@@ -1415,6 +1415,12 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 @media (min-width: 68rem) {
   .texto-especiales p, .texto-especiales h4, .texto-promo p, .texto-promo h4 {
     font-size: 1.23rem;
+  }
+}
+
+@media (max-width: 37rem) {
+  .texto-especiales, .texto-promo {
+    top: 47%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

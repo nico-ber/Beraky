@@ -578,10 +578,8 @@ a {
   }
 }
 
-
-
 .cafe{
-  height: 98vh;
+  height: 86vh;
   background: darken( $turquesa, 15%);
   box-shadow: 0 0 2rem .1rem #00000054;
   z-index: 1;
@@ -659,7 +657,7 @@ p.margin-top {
   bottom: 0;
   position: absolute;
   padding: 0 13%;
-  height: 61%;
+  height: 57%;
   color: $crema;
   /*
   display: flex;
@@ -700,7 +698,7 @@ p.margin-top {
   top: 0;
   position: absolute;
   width: 100%;
-  height: 56%;
+  height: 62%;
   @include tablet{
     clip-path: polygon(10% 100%, 100% 100%, 100% 0%, 0% 0%);
     position: absolute;
@@ -1320,10 +1318,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     line-height: 200%;
   }
   @include desktop(){
-    
     p,h4{
       font-size: 1.23rem;
     }
-    
   } 
+  @include mobile(){
+    top: 47%;
+  }
 } 
