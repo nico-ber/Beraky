@@ -1211,7 +1211,6 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 
 .locales::after {
   content: "";
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -1220,9 +1219,13 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   background-image: url(../Imagenes/Sirviendo.jpg);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 49% 0;
   z-index: -1;
+}
+
+@media (max-width: 37rem) {
+  .locales::after {
+    background-size: 270%;
+  }
 }
 
 .locales .velo {
