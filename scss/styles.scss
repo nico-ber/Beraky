@@ -1162,10 +1162,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     width: 100%;
     height: 100%;
     background-image: url(../Imagenes/Sirviendo.jpg);
-    background-position: center;
+    //background-position: center;
     background-size: cover;
     //background-repeat: no-repeat;
-    //background-position: 49% 0;
+    background-position: 49% 1rem;
     z-index: -1;
     @include mobile(){
       background-size: 270%;
